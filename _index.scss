@@ -1,0 +1,158 @@
+/** Show icons only. */
+@mixin show(
+    $url,
+    $size: 1em,
+    $fill-color: null,
+    $fill-image: null,
+    $display: inline-block,
+    $width: $size,
+    $height: $size
+) {
+    @include box($display, $width, $height);
+    @include -show-svg($url, $fill-color, $fill-image);
+}
+
+/** Displayed with square background. */
+@mixin show-square(
+    $url,
+    $size: 1em,
+    $background-color: null,
+    $fill-color: null,
+    $background-image: null,
+    $fill-image: null,
+    $border-radius: 25%,
+    $display: null,
+    $ratio: 1.4,
+    $width: $size,
+    $height: $size,
+    $svg-size: null,
+    $svg-width: $svg-size,
+    $svg-height: $svg-size,
+    $border-style: null,
+    $border-width: null,
+    $border-color: null
+) {
+    @include box($display, $width, $height, border-box);
+    @include border($border-radius, $border-style, $border-width, $border-color);
+    @include background($background-color, $background-image);
+
+    @if $display == null {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    position: relative;
+
+    &::before {
+        position: absolute;
+
+        $svg-width: calculate-svg-size($svg-width, $width, $ratio);
+        $svg-height: calculate-svg-size($svg-height, $height, $ratio);
+
+        @if $border-width != null {
+            $svg-width: calc(#{$svg-width} - #{$border-width});
+            $svg-height: calc(#{$svg-height} - #{$border-width});
+        }
+
+        @include show-with-pseudo($url, null, $fill-color, $fill-image, $display, $svg-width, $svg-height);
+    }
+}
+
+@mixin show-with-pseudo($args...) {
+    content: "";
+    pointer-events: none;
+    @include show($args...);
+}
+
+/** Shown with circular background. */
+@mixin show-circle($args...) {
+    @include show-square($args..., $border-radius: 50%);
+}
+
+/** Style settings for the box. */
+@mixin box($display, $width, $height, $box-sizing: null) {
+    @if $display != null {
+        display: $display;
+    }
+    @if $width != null {
+        width: $width;
+    }
+    @if $height != null {
+        height: $height;
+    }
+    @if $box-sizing != null {
+        box-sizing: $box-sizing;
+    }
+}
+
+/** style settings for the background. */
+@mixin background($background-color, $background-image) {
+    @if $background-color != null {
+        background-color: $background-color;
+    }
+    @if $background-image != null {
+        background-image: $background-image;
+    }
+}
+
+/** style settings related to borders. */
+@mixin border($border-radius, $border-style, $border-width, $border-color) {
+    border-radius: $border-radius;
+
+    @if $border-width != null {
+        border-width: $border-width;
+
+        @if $border-style == null {
+            $border-style: solid;
+        }
+    }
+    @if $border-style != null {
+        border-style: $border-style;
+    }
+    @if $border-color != null {
+        border-color: $border-color;
+    }
+}
+@mixin -show-svg($url, $fill-color: null, $fill-image: null) {
+    @if $fill-color == null and $fill-image == null {
+        background-image: url("#{$url}");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    } @else {
+        @if $fill-color {
+            background-color: $fill-color;
+        }
+        // Assuming background image and linear-gradient are used.
+        @if $fill-image {
+            background-image: $fill-image;
+        }
+
+        mask-image: url("#{$url}");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        -webkit-mask-image: url("#{$url}");
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+    }
+}
+
+/**
+ * Calculate the size of the svg.
+ *
+ * If $priority-size is specified, it takes precedence.
+ * If $priority-size is not specified, the size of the SVG is a fixed percentage of $element-size.
+ */
+@function calculate-svg-size($priority-size, $element-size, $ratio) {
+    @if $priority-size == null {
+        @if $ratio == 1 or $ratio == null {
+            @return $element-size;
+        }
+        @return calc(#{$element-size} / #{$ratio});
+    } @else {
+        @return $priority-size;
+    }
+}

@@ -1,0 +1,62 @@
+{
+  "name": "smart-svg",
+  "version": "0.0.0",
+  "description": "SVG fast display library made of Sass with coloring support.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misuken-now/smart-svg"
+  },
+  "keywords": [
+    "Sass",
+    "Css",
+    "SVG",
+    "React",
+    "Vue",
+    "Angular",
+    "fast",
+    "color"
+  ],
+  "main": "",
+  "types": "index",
+  "scripts": {
+    "start": "start-storybook -p 3000",
+    "storybuild": "build-storybook",
+    "format": "npm run format:write",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,yml,yaml,md,html}\"",
+    "format:write": "prettier --write \"**/*.{js,jsx,ts,tsx,json,yml,yaml,md,html}\"",
+    "versionup:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major",
+    "versionup:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor",
+    "versionup:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch"
+  },
+  "author": "misuken",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/misuken-now/smart-svg/issues"
+  },
+  "homepage": "https://github.com/misuken-now/smart-svg#readme",
+  "sideEffects": [
+    "*.scss"
+  ],
+  "files": [
+    "_index.scss"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.18.6",
+    "@babel/preset-env": "^7.18.9",
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/manager-webpack5": "^6.5.12",
+    "@storybook/react": "^6.5.12",
+    "css-loader": "^6.7.1",
+    "del-cli": "^4.0.1",
+    "generate-changelog": "^1.8.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "require-from-string": "^2.0.2",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0",
+    "style-loader": "^3.3.1",
+    "typescript": "^4.3.0",
+    "webpack": "^5.74.0"
+  }
+}

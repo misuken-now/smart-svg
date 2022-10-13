@@ -1,0 +1,80 @@
+@use ".." as smart-svg;
+
+// Shape background gradation
+$background-image: linear-gradient(180deg, #eee 0%, #888 100%);
+// Svg gradation
+$fill-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(205, 103, 153) 100%);
+
+// Plane Type
+.plane {
+    @include smart-svg.show("https://cdn.svgporn.com/logos/svg.svg", 48px);
+}
+
+.plane-fill {
+    @include smart-svg.show("https://cdn.svgporn.com/logos/react.svg", 48px, #000);
+}
+
+.plane-gradation {
+    @include smart-svg.show("https://cdn.svgporn.com/logos/sass.svg", 48px, $fill-image: $fill-image);
+}
+
+// Background Type
+.circle {
+    @include smart-svg.show-circle("https://cdn.svgporn.com/logos/svg.svg", 48px, #ddd);
+}
+
+.circle-fill {
+    @include smart-svg.show-circle("https://cdn.svgporn.com/logos/react.svg", 48px, #ddd, #000);
+}
+
+.circle-gradation {
+    @include smart-svg.show-circle("https://cdn.svgporn.com/logos/sass.svg", 48px, #ddd, $fill-image: $fill-image);
+}
+
+// Gradation Type
+.square {
+    @include smart-svg.show-square("https://cdn.svgporn.com/logos/svg.svg", 48px, $background-image: $background-image);
+}
+
+.square-fill {
+    @include smart-svg.show-square("https://cdn.svgporn.com/logos/react.svg", 48px, $background-image: $background-image, $fill-color: #000);
+}
+
+.square-gradation {
+    @include smart-svg.show-square("https://cdn.svgporn.com/logos/sass.svg", 48px, $background-image: $background-image, $fill-image: $fill-image);
+}
+
+// Border Type
+.circle-border {
+    @include smart-svg.show-circle("https://cdn.svgporn.com/logos/svg.svg", 48px, #ddd, $border-width: 4px);
+}
+
+.circle-fill-border {
+    @include smart-svg.show-circle("https://cdn.svgporn.com/logos/react.svg", 48px, #ddd, #000, $border-width: 4px);
+}
+
+.circle-gradation-border {
+    @include smart-svg.show-circle("https://cdn.svgporn.com/logos/sass.svg", 48px, #ddd, $fill-image: $fill-image, $border-width: 4px);
+}
+
+.square-border {
+    @include smart-svg.show-square("https://cdn.svgporn.com/logos/svg.svg", 48px, $background-image: $background-image, $border-width: 4px);
+}
+
+.square-fill-border {
+    @include smart-svg.show-square("https://cdn.svgporn.com/logos/react.svg", 48px, $background-image: $background-image, $fill-color: #000, $border-width: 4px);
+}
+
+.square-gradation-border {
+    @include smart-svg.show-square("https://cdn.svgporn.com/logos/sass.svg", 48px, $background-image: $background-image, $fill-image: $fill-image, $border-width: 4px);
+}
+
+// Pseudo Element
+.pseudo {
+    &::before {
+        @include smart-svg.show-with-pseudo("https://cdn.svgporn.com/logos/react.svg", 48px, #000);
+    }
+    &::after {
+        @include smart-svg.show-with-pseudo("https://cdn.svgporn.com/logos/sass.svg", 48px, $fill-image: $fill-image);
+    }
+}
