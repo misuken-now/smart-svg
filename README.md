@@ -72,7 +72,7 @@ Please refer to [demo code] for an example.
     @include smart-svg.show(
         // URL or Base64(Data URI scheme)
         "https://cdn.svgporn.com/logos/react.svg",
-        // $size        // Alias to $width and $heigh           - Default 1em
+        // $size        // Alias to $width and $height          - Default 1em
         // $fill-color, // SVG fill color                       - Default null
         // $fill-image, // SVG fill image(ex. linear-gradation) - Default null
         // $display,    // CSS Property                         - Default inline-block
@@ -89,7 +89,7 @@ Please refer to [demo code] for an example.
     @include smart-svg.show-square(
         // URL or Base64(Data URI scheme)
         "https://cdn.svgporn.com/logos/react.svg",
-        // $size              // Alias to $width and $heigh           - Default 1em
+        // $size              // Alias to $width and $height          - Default 1em
         // $background-color, // Shape background color               - Default null
         // $fill-color,       // SVG fill color                       - Default null
         // $background-image, // Shape image(ex. linear-gradation)    - Default null
@@ -99,7 +99,7 @@ Please refer to [demo code] for an example.
         // $ratio,            // Ratio of element size to SVG         - Default 1.4
         // $width,            // CSS Property                         - Default $size
         // $height,           // CSS Property                         - Default $size
-        // $svg-size,         // Alias to $width and $heigh           - Default null
+        // $svg-size,         // Alias to $svg-width and $svg-height  - Default null
         // $svg-width,        // SVG width                            - Default $svg-size
         // $svg-height,       // SVG height                           - Default $svg-size
         // $border-style,     // CSS Property                         - Default null
