@@ -1,3 +1,9 @@
+#### 1.0.2 (2022-10-15)
+
+##### Documentation Changes
+
+*  update README.md ([d2e7f750](https://github.com/misuken-now/smart-svg/commit/d2e7f750b87759047fbbb666519f93ae7a0d06fd))
+
 #### 1.0.1 (2022-10-14)
 
 ##### Documentation Changes
