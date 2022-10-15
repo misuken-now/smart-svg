@@ -2,10 +2,12 @@
 
 This is a SVG fast display library made of Sass with coloring support.
 
+<img width="50%" src="https://user-images.githubusercontent.com/6824728/195589519-5a007b62-8b92-4448-97d0-b1a377d273ce.png">
+
 # Highlight
 
 - 😊 Very easy to use
-- 🎨 Supports SVG color (single color) and gradient control
+- 🎨 Supports SVG color (single color) and gradient control and shape decoration.
 - 🚀 Faster display than SVG libraries such as React
 - 💰 Reduces various costs because it can be completed only with CSS
 - 👻 Can be used for pseudo-elements (with some restrictions)
@@ -115,6 +117,22 @@ Please refer to [demo code] for an example.
     }
 }
 ```
+
+# Demo
+
+How to check the operation in the storybook.
+
+```
+git clone git@github.com:misuken-now/smart-svg.git
+cd smart-svg
+yarn
+yarn start
+```
+
+# Browser Support
+
+Available on browsers that support mask-image.
+IE11 is not supported.
 
 # Notes
 
