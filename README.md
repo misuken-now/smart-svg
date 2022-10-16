@@ -30,7 +30,7 @@ Write the following in the Sass file and apply the class name to the element.
 @use "smart-svg";
 
 .icon {
-    @include smart-svg.show("https://cdn.svgporn.com/logos/react.svg");
+    @include smart-svg.show("https://cdn.svgporn.com/logos/react.svg", 1em);
 }
 
 .button {
@@ -40,7 +40,7 @@ Write the following in the Sass file and apply the class name to the element.
     gap: .5ex;
 
     &::before {
-        @include smart-svg.show-with-pseudo("https://cdn.svgporn.com/logos/react.svg");
+        @include smart-svg.show-with-pseudo("https://cdn.svgporn.com/logos/react.svg", 1em);
     }
 }
 
@@ -74,7 +74,7 @@ Please refer to [demo code] for an example.
     @include smart-svg.show(
         // URL or Base64(Data URI scheme)
         "https://cdn.svgporn.com/logos/react.svg",
-        // $size        // Alias to $width and $height          - Default 1em
+        // $size        // Alias to $width and $height          - Default null
         // $fill-color, // SVG fill color                       - Default null
         // $fill-image, // SVG fill image(ex. linear-gradation) - Default null
         // $display,    // CSS Property                         - Default inline-block
@@ -91,7 +91,7 @@ Please refer to [demo code] for an example.
     @include smart-svg.show-square(
         // URL or Base64(Data URI scheme)
         "https://cdn.svgporn.com/logos/react.svg",
-        // $size              // Alias to $width and $height          - Default 1em
+        // $size              // Alias to $width and $height          - Default null
         // $background-color, // Shape background color               - Default null
         // $fill-color,       // SVG fill color                       - Default null
         // $background-image, // Shape image(ex. linear-gradation)    - Default null

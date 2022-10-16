@@ -1,7 +1,7 @@
 /** Show icons only. */
 @mixin show(
     $url,
-    $size: 1em,
+    $size: null,
     $fill-color: null,
     $fill-image: null,
     $display: inline-block,
@@ -15,7 +15,7 @@
 /** Displayed with square background. */
 @mixin show-square(
     $url,
-    $size: 1em,
+    $size: null,
     $background-color: null,
     $fill-color: null,
     $background-image: null,
