@@ -1,3 +1,9 @@
+#### 1.0.3 (2022-10-16)
+
+##### New Features
+
+*  remove default size ([9d22b4fe](https://github.com/misuken-now/smart-svg/commit/9d22b4fe14f3892971aad726fbd3ff9e454352a9))
+
 #### 1.0.2 (2022-10-15)
 
 ##### Documentation Changes
