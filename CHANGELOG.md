@@ -1,3 +1,14 @@
+#### 1.0.4 (2022-11-01)
+
+##### Continuous Integration
+
+*  update github-pages-deploy ([eb7e96f4](https://github.com/misuken-now/smart-svg/commit/eb7e96f40a4b422fb1da1d062d087fd43022acca))
+*  add github pages deploy workflow ([0cbf9088](https://github.com/misuken-now/smart-svg/commit/0cbf90883e31efc6ad6cdf087c994b29645fa2b2))
+
+##### Documentation Changes
+
+*  add demo link ([5cd616b5](https://github.com/misuken-now/smart-svg/commit/5cd616b5c6466f1ec9428e41157b061b615b2e61))
+
 #### 1.0.3 (2022-10-16)
 
 ##### New Features
