@@ -2,6 +2,8 @@
 
 This is a SVG fast display library made of Sass with coloring support.
 
+View the [demo](https://misuken-now.github.io/smart-svg/storybook/)
+
 <img width="50%" src="https://user-images.githubusercontent.com/6824728/195589519-5a007b62-8b92-4448-97d0-b1a377d273ce.png">
 
 # Highlight
