@@ -1,3 +1,9 @@
+### 1.1.0 (2022-11-03)
+
+##### New Features
+
+*  support custom property ([d05d5e99](https://github.com/misuken-now/smart-svg/commit/d05d5e99df459f30a2313c214729320e02903833))
+
 #### 1.0.4 (2022-11-01)
 
 ##### Continuous Integration
