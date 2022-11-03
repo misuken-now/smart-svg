@@ -1,6 +1,6 @@
 {
   "name": "smart-svg",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "SVG fast display library made of Sass with coloring support.",
   "repository": {
     "type": "git",
