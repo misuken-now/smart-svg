@@ -48,6 +48,13 @@ const pseudoFragment = (
     <span className={classNames.pseudo}>← ::before is fill & ::after is gradation →</span>
   </>
 );
+const customPropertyFragment = (
+  <>
+    <span className={classNames.customProperty}/>
+    &nbsp;
+    <span className={classNames.customProperty}/>
+  </>
+);
 exports.All = {
   render: () => (
     <>
@@ -70,6 +77,10 @@ exports.All = {
       <section>
         <h1>Pseudo Element</h1>
         {pseudoFragment}
+      </section>
+      <section>
+        <h1>Custom Property</h1>
+        {customPropertyFragment}
       </section>
     </>
   ),
@@ -208,7 +219,6 @@ $fill-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(205, 103, 15
   ),
 };
 
-
 exports.Pseudo = {
   render: () => (
     <>
@@ -226,6 +236,27 @@ $fill-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(205, 103, 15
     }
     &::after {
         @include smart-svg.show-pseudo("https://cdn.svgporn.com/logos/sass.svg", 48px, $fill-image: $fill-image);
+    }
+}
+    `.trim()}
+      </SampleCode>
+    </>
+  ),
+};
+
+exports.CustomProperty = {
+  render: () => (
+    <>
+      {customPropertyFragment}
+      <SampleCode>
+        {`
+@use "smart-svg";
+
+.custom-property {
+    --url: url("https://cdn.svgporn.com/logos/sass.svg");
+    @include smart-svg.show(var(--url), 48px);
+    & + & {
+        --url: url("https://cdn.svgporn.com/logos/svg.svg");
     }
 }
     `.trim()}

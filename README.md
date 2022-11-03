@@ -4,15 +4,27 @@ This is a SVG fast display library made of Sass with coloring support.
 
 View the [demo](https://misuken-now.github.io/smart-svg/storybook/)
 
-<img width="50%" src="https://user-images.githubusercontent.com/6824728/195589519-5a007b62-8b92-4448-97d0-b1a377d273ce.png">
+<img width="50%" src="https://user-images.githubusercontent.com/6824728/199705108-f14a3eb7-faec-40b3-9325-b508b892b121.png">
 
 # Highlight
 
-- 😊 Very easy to use
-- 🎨 Supports SVG color (single color) and gradient control and shape decoration.
-- 🚀 Faster display than SVG libraries such as React
-- 💰 Reduces various costs because it can be completed only with CSS
-- 👻 Can be used for pseudo-elements (with some restrictions)
+- 🏖 **Easy to use**： Just call Mixin
+- 🛠 **Flexible**: Supports SVG color (single color) and gradient control and shape decoration
+- 🚀 **Performance**: Very fast display
+- 😊 **Brevity**: Reduces various costs because it can be completed only with CSS
+- ⭐ **Convenient**: Can be used for pseudo-elements (with some restrictions)
+
+| Function                                           | smart-svg | [react-sass-inlinesvg] | [react-inlinesvg] |
+| -------------------------------------------------- | --------- |------------------------| ----------------- |
+| Specify SVG in Sass                                | ✅         | ✅                      | ❌                |
+| Specify SVG in JSX                                 | ❌         | ✅                      | ✅                |
+| Style control for individual child elements in SVG | ❌         | ✅                      | ✅                |
+| SVG coloring                                       | ✅         | ✅                      | ✅                |
+| Circular and rectangular supports                  | ✅         | ✅                      | ❌                |
+| SVG display for pseudo-elements                    | ✅         | ❌                      | ❌                |
+| Use outside of React                               | ✅         | ❌                      | ❌                |
+| IE11 Support                                       | ❌         | ✅                      | ✅                |
+| performance                                        | A+        | A                      | C                 |
 
 # Usage
 
@@ -54,13 +66,13 @@ Write the following in the Sass file and apply the class name to the element.
 
 # API
 
-[Keyword Arguments]: https://sass-lang.com/documentation/at-rules/mixin#keyword-arguments
+[keyword arguments]: https://sass-lang.com/documentation/at-rules/mixin#keyword-arguments
 [demo code]: ./demo/demo.stories.module.scss
 
 Use the four mixins applied by smart-svg to specify the SVG resource and any options.
 
 | Mixin                             | Description                   |
-|-----------------------------------|-------------------------------|
+| --------------------------------- | ----------------------------- |
 | `show($url, $options...)`         | Plain SVG                     |
 | `show-circle($url, $options...)`  | SVG enclosed in a circle      |
 | `show-square($url, $options...)`  | SVG enclosed in a rectangle   |
@@ -74,7 +86,7 @@ Please refer to [demo code] for an example.
 
 .icon1 {
     @include smart-svg.show(
-        // URL or Base64(Data URI scheme)
+        // URL or Base64(Data URI scheme) or var(--url)
         "https://cdn.svgporn.com/logos/react.svg",
         // $size        // Alias to $width and $height          - Default null
         // $fill-color, // SVG fill color                       - Default null
@@ -91,7 +103,7 @@ Please refer to [demo code] for an example.
 
 .icon3 {
     @include smart-svg.show-square(
-        // URL or Base64(Data URI scheme)
+        // URL or Base64(Data URI scheme) or var(--url)
         "https://cdn.svgporn.com/logos/react.svg",
         // $size              // Alias to $width and $height          - Default null
         // $background-color, // Shape background color               - Default null
@@ -141,11 +153,11 @@ IE11 is not supported.
 Please note the following when using it.
 
 - `show-circle()` `show-square()` `show-with-pusedo()` cannot be applied to `<svg>` elements.
-    - Because pseudo-elements of `<svg>` elements are not visible.
+  - Because pseudo-elements of `<svg>` elements are not visible.
 - CSS cannot be specified for child elements within an `<svg>` element (partial coloring or partial animation is not allowed).
-    - Because the element does not exist in the DOM.
+  - Because the element does not exist in the DOM.
 - When applied to a pseudo-element (`show-with-pseudo()`), background color and border cannot be specified.
-    - Because pseudo-elements cannot be used inside pseudo-elements.
+  - Because pseudo-elements cannot be used inside pseudo-elements.
 
 # LICENSE
 

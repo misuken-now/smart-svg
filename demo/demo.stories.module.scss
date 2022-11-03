@@ -78,3 +78,11 @@ $fill-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(205, 103, 15
         @include smart-svg.show-with-pseudo("https://cdn.svgporn.com/logos/sass.svg", 48px, $fill-image: $fill-image);
     }
 }
+
+.custom-property {
+    --url: url("https://cdn.svgporn.com/logos/sass.svg");
+    @include smart-svg.show-circle(var(--url), 48px, #ddd);
+    & + & {
+        --url: url("https://cdn.svgporn.com/logos/svg.svg");
+    }
+}

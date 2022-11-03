@@ -1,3 +1,5 @@
+@use "sass:string";
+
 /** Show icons only. */
 @mixin show(
     $url,
@@ -116,7 +118,7 @@
 }
 @mixin -show-svg($url, $fill-color: null, $fill-image: null) {
     @if $fill-color == null and $fill-image == null {
-        background-image: url("#{$url}");
+        background-image: resolve-url($url);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -129,15 +131,22 @@
             background-image: $fill-image;
         }
 
-        mask-image: url("#{$url}");
+        mask-image: resolve-url($url);
         mask-size: contain;
         mask-repeat: no-repeat;
         mask-position: center;
-        -webkit-mask-image: url("#{$url}");
+        -webkit-mask-image: resolve-url($url);
         -webkit-mask-size: contain;
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-position: center;
     }
+}
+
+@function resolve-url($url) {
+    @if string.index($url, "var(") == 1 {
+        @return $url;
+    }
+    @return url("#{$url}");
 }
 
 /**
