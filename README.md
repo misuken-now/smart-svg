@@ -26,6 +26,15 @@ View the [demo](https://misuken-now.github.io/smart-svg/storybook/)
 | IE11 Support                                       | ❌         | ✅                      | ✅                |
 | performance                                        | A+        | A                      | C                 |
 
+The following will help you in selecting a library.
+
+- **smart-svg** - This is the smartest way if it meets the functional requirements.
+- **[react-sass-inlinesvg]** - This is useful when you want to apply different styles to individual child elements within an SVG element and want to specify which SVG to display from the Sass.
+- **[react-inlinesvg]** - It is a stable library.
+
+[react-sass-inlinesvg]: https://github.com/misuken-now/react-sass-inlinesvg
+[react-inlinesvg]: https://github.com/gilbarbara/react-inlinesvg
+
 # Usage
 
 ```
