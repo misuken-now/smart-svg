@@ -160,6 +160,8 @@ yarn start
 Available on browsers that support mask-image.
 IE11 is not supported.
 
+When specifying URLs in custom properties, absolute paths must be used because [until Safari 14 there is a bug](https://zenn.dev/misuken/articles/adf0a3072560ea) in resolving relative paths.
+
 # Notes
 
 Please note the following when using it.
