@@ -1,3 +1,9 @@
+#### 1.1.3 (2022-12-30)
+
+##### Documentation Changes
+
+*  update README(Safari14 bug) ([de29b86f](https://github.com/misuken-now/smart-svg/commit/de29b86f2eb00f92a061d5d224c16ef3e1a4724c))
+
 #### 1.1.2 (2022-12-05)
 
 ##### Documentation Changes
