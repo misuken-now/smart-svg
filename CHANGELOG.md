@@ -1,3 +1,9 @@
+#### 1.1.4 (2025-11-12)
+
+##### Bug Fixes
+
+*  resolve sass-loader warnings ([c22aef04](https://github.com/misuken-now/smart-svg/commit/c22aef048f73e49226bc62641fb6066b2c065bf8))
+
 #### 1.1.3 (2022-12-30)
 
 ##### Documentation Changes
