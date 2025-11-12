@@ -1,3 +1,9 @@
+#### 1.1.5 (2025-11-12)
+
+##### Continuous Integration
+
+*  resolve actions error ([d08b1008](https://github.com/misuken-now/smart-svg/commit/d08b1008403fd8d4b51a90704506b3e80655f3a3))
+
 #### 1.1.4 (2025-11-12)
 
 ##### Bug Fixes
