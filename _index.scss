@@ -69,7 +69,8 @@
 
 /** Shown with circular background. */
 @mixin show-circle($args...) {
-    @include show-square($args..., $border-radius: 50%);
+    $rest: (border-radius: 50%);
+    @include show-square($args..., $rest...);
 }
 
 /** Style settings for the box. */
