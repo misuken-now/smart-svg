@@ -1,3 +1,10 @@
+#### 1.1.6 (2026-09-15)
+
+##### Continuous Integration
+
+*  configure Yarn 4 release automation ([e0971ba2](https://github.com/misuken-now/smart-svg/commit/e0971ba2e867ea87f7445bcf157c10fb25e8e68c))
+*  add trusted publishing release workflows ([b7734270](https://github.com/misuken-now/smart-svg/commit/b773427072d9128ecb0b9d7b7dbd658d659793a2))
+
 #### 1.1.5 (2025-11-12)
 
 ##### Continuous Integration
