@@ -25,11 +25,11 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
       - name: Prepare Yarn
-        run: corepack prepare yarn@1.22.22 --activate
+        run: corepack prepare yarn@4.9.2 --activate
       - name: Install dependencies
-        run: yarn install --frozen-lockfile --ignore-scripts
+        run: yarn install --immutable
       - name: Build Storybook
-        run: yarn build-storybook -o ./dist/storybook
+        run: yarn storybuild -o ./dist/storybook
       - name: Deploy
         uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
         with:
